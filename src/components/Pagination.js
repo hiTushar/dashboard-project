@@ -49,13 +49,13 @@ export default function Pagination(props) {
                 break;
 
             case '<<': 
-                nextPage = pageNo - DEFAULT_PAGINATION_RANGE;
-                calculatePaginationRange(-DEFAULT_PAGINATION_RANGE);
+                nextPage = 0;
+                calculatePaginationRange(-paginationRange[0]);
                 break;
 
             case '>>':
-                nextPage = pageNo + DEFAULT_PAGINATION_RANGE;
-                calculatePaginationRange(DEFAULT_PAGINATION_RANGE);
+                nextPage = totalPages - 1;
+                calculatePaginationRange((totalPages - 1) - DEFAULT_PAGINATION_RANGE - paginationRange[0] );
                 break;
 
             default:
@@ -93,7 +93,7 @@ export default function Pagination(props) {
             >
                 {'<'}
             </button>
-            {paginationRange.map(button => <button key={button} onClick={(e) => changePage(e.target.textContent - 1)}>{Number(button) + 1}</button>)}
+            {paginationRange.map(button => <button key={button} onClick={(e) => changePage(e.target.textContent - 1)} className="page">{Number(button) + 1}</button>)}
             <button  
                 onClick={(e) => changePage(e.target.textContent)}
                 disabled={checkDisabled('>')}
