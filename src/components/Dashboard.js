@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import Table from "./Table";
+import Modal from "./Modal";
 
 const DEFAULT_ROWS_PER_PAGE = 15;
 
@@ -9,7 +10,7 @@ export default function Dashboard(props) {
     const [ tableData, setTableData ] = useState([]);
     const [ rowsPerPage, setRowsPerPage ] = useState(DEFAULT_ROWS_PER_PAGE);
     const [ pageNo, setPageNo ] = useState(0);
-
+   
     useEffect(() => {
         console.log({ rowsPerPage, pageNo });
         let firstRowIndex = rowsPerPage * pageNo;
@@ -18,7 +19,7 @@ export default function Dashboard(props) {
     }, [rowsPerPage, pageNo]);
 
     return (
-        <>
+        <div className="dashboard">
             {
                 tableData.length ? (
                     <>
@@ -36,6 +37,8 @@ export default function Dashboard(props) {
                     </>
                 ) : null
             }
-        </>
+            <Modal />
+        </div>
     )
 }
+

@@ -1,22 +1,23 @@
 import React from "react";
+import Row from "./Row";
 
 export default function Table(props) {
     const { tableData, tableColumns } = props;
 
-    const getTableHead = (col, key) => <th key={key} className="table-col">{col}</th>
-    
-    const getTableRow = (row, key) => <tr key={key} className="table-row">{Object.values(row).map(cell => getTableCell(cell, row.id))}</tr>
+    const getTableHead = (col) => <th key={col} className="table-col">{col}</th>
 
-    const getTableCell = (cell, key) => <td key={`${cell}${key}`} className="table-cell">{cell}</td>
+    const getTableRow = (row) => <Row key={row.id} row={row}/>
 
     return (
-        <table>
-            <thead>
-                {tableColumns.map(col => getTableHead(col, col))}
-            </thead>
-            <tbody>
-                {tableData.map(row => getTableRow(row, row.id))}
-            </tbody>
-        </table>
+        <div className="dashboard-table">
+            <table>
+                <thead>
+                    {tableColumns.map(col => getTableHead(col))}
+                </thead>
+                <tbody>
+                    {tableData.map(row => getTableRow(row))}
+                </tbody>
+            </table>
+        </div>
     )
 }

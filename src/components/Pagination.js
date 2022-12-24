@@ -80,7 +80,7 @@ export default function Pagination(props) {
     }
 
     return (
-        <div className="pagination">
+        <div className="dashboard-pagination">
             <button  
                 onClick={(e) => changePage(e.target.textContent)} 
                 disabled={checkDisabled('<<')}
