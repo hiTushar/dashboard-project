@@ -7,11 +7,6 @@ body {
   margin: 0px;
 }
 
-.App {
-  text-align: center;
-  position: relative;
-}
-
 .sidepanel {
   position: fixed;
   width: 200px;
@@ -96,7 +91,8 @@ body {
   width: calc(100vw - 220px);
   height: 100vh;
   background-color: black;
-  filter: opacity(0.4);
+  /* filter: opacity(0.4); */ /* was unable to reset this for child element .modal */
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .dashboard .modal-container .modal {
@@ -106,8 +102,26 @@ body {
   top: 150px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(240, 37, 37);
+  background-color: rgb(216, 197, 197);
   /* filter: opacity(1); */
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.dashboard .modal-container .modal .close-button {
+  display: relative;
+  
+  border: none;
+  border-radius: 3px;
+}
+
+.dashboard .modal-container .modal .close-button:hover {
+  filter: brightness(0.9);
+  cursor: pointer;
+}
+
+.dashboard .modal-container .modal .close-button:active {
+  filter: brightness(0.7);
 }
 
 .dashboard-pagination {
@@ -134,5 +148,5 @@ body {
 }
 
 .dashboard-pagination button:active {
-  filter: brightness(0.5);
+  filter: brightness(0.7);
 }
