@@ -59,20 +59,13 @@ body {
   border-right: solid 2px gray; 
 }
 
-.dashboard-table table tr:nth-child(2n) {
-  background-color: rgb(248, 244, 244);
-}
-
 .dashboard-table table thead th:nth-child(1), th:nth-child(2) {
   width: 80px;
 }
 
 .dashboard-table table thead th:nth-child(4) {
   width: 105px;
-}
-
-.dashboard-table table tr:nth-child(2n+1) {
-  background-color: rgb(235, 232, 232);
+  text-transform: capitalize;
 }
 
 .dashboard-table table tr:hover {
@@ -80,8 +73,12 @@ body {
   cursor: pointer;
 }
 
-.dashboard-table table tr td:nth-child(4) {
-  text-transform: capitalize;
+.dashboard-table table tr:nth-child(2n) {
+  background-color: rgb(248, 244, 244);
+}
+
+.dashboard-table table tr:nth-child(2n+1) {
+  background-color: rgb(235, 232, 232);
 }
 
 .dashboard .modal-container {
