@@ -59,12 +59,16 @@ body {
   border-right: solid 2px gray; 
 }
 
-.dashboard-table table thead th:nth-child(1), th:nth-child(2) {
+.dashboard-table table thead th:nth-child(1) {
+  width: 50px;
+}
+
+.dashboard-table table thead th:nth-child(2), th:nth-child(3) {
   width: 80px;
 }
 
-.dashboard-table table thead th:nth-child(4) {
-  width: 105px;
+.dashboard-table table thead th:nth-child(5) {
+  width: 110px;
 }
 
 .dashboard-table table tr:hover {
@@ -80,7 +84,7 @@ body {
   background-color: rgb(235, 232, 232);
 }
 
-.dashboard-table table tr td:nth-child(4n) {
+.dashboard-table table tr td:nth-child(5n) {
   text-transform: capitalize;
 }
 
