@@ -10,6 +10,12 @@ export function modalReducer(state = initialState, action) {
                 modalData: payload
             })
 
+        case actionTypes.SET_SELECTED_ROWS: 
+            return ({
+                ...state,
+                selectedRows: payload
+            });
+
         default: 
             return state;
     }

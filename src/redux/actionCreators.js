@@ -6,3 +6,10 @@ export function setModalData(data) {
         payload: data
     })
 }
+
+export function setSelectedRows(data) {
+    return ({
+        type: actionTypes.SET_SELECTED_ROWS,
+        payload: data
+    })
+}
