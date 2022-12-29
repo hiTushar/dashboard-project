@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { setSelectedRows } from "../redux/actionCreators";
 import EventsService from "../utils/events";
 
-export default function Header(props) {
+function Header(props) {
     const { columns } = props;
+    const [ select, setSelect ] = useState(false);
 
     const selectAllRows = (event) => {
         const { checked } = event.target;
-        EventsService.emitter.emit(EventsService.SELECT_ROW, checked);
-        EventsService.emitter.emit(EventsService.UPDATE_ROWS, { selected: checked });
+        
+        setSelect(checked);
+
+        let selectedRowsVal = { ...props.selectedRows };
+        for (let id in selectedRowsVal) {
+            selectedRowsVal[id] = checked;
+        }
+        props.setSelectedRows(selectedRowsVal);
     }
 
     const getTableHeadCell = (data) => <th key={data} className="table-col">{data}</th>
@@ -24,3 +33,17 @@ export default function Header(props) {
     }
     return thArray;
 }
+
+const mapStateToProps = state => {
+    return {
+        selectedRows: state.selectedRows
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setSelectedRows: (selectedRows) => dispatch(setSelectedRows(selectedRows))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
