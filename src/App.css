@@ -154,6 +154,30 @@ body {
   filter: brightness(0.7);
 }
 
+.dashboard .modal-container .modal .modal-data {
+  background-color: rgb(226, 230, 234);
+  margin: 10px;
+  padding: 5px;
+}
+
+.dashboard .modal-container .modal .modal-data .modal-data-field {
+  margin-bottom: 10px;
+}
+
+.dashboard .modal-container .modal .modal-data .modal-data-field span:nth-child(1) {
+  display: inline-block;
+  width: 100px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.dashboard .modal-container .modal .modal-data .modal-data-field span:nth-child(2) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
+
 .dashboard-pagination {
   position: fixed;
   display: flex;

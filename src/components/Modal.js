@@ -26,7 +26,18 @@ function Modal(props) {
                     <div className="modal-container">
                         <div className="modal">
                             <button className="close-button" onClick={() => closeModal()}>x</button>
-                            <div>{JSON.stringify(modalData)}</div>
+                            <div className="modal-data">
+                                {
+                                    Object.keys(modalData).map(field => {
+                                        return (
+                                            <div className="modal-data-field">
+                                                <span>{field}</span>
+                                                <span>{modalData[field]}</span>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
                     </div>
                 ) : null
