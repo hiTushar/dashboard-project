@@ -23,15 +23,24 @@ function Dashboard(props) {
             return { ...temp, [row.id]: false }
         }, {});
         props.setSelectedRows(selectedRowsVal);
-    }, [rowsPerPage, pageNo]);
+    }, [rowsPerPage, pageNo, data]);
+
+    const updateTableData = () => {
+        let dataVal = data.filter(row => !props.selectedRows[row.id]);
+        setData(dataVal);
+    }
 
     console.log(props.selectedRows);
+    const noOfRowsSelected = Object.values(props.selectedRows).filter(rowId => rowId).length;
     return (
         <div className="dashboard">
             {
                 tableData.length ? (
                     <>
-                        Selected: {Object.values(props.selectedRows).filter(rowId => rowId).length}
+                        <div className="row-delete">
+                            <button onClick={updateTableData} disabled={true ? !noOfRowsSelected : false}>Delete</button>
+                            <span>Selected: {noOfRowsSelected}</span>
+                        </div>
                         <Table 
                             tableData={tableData} 
                             tableColumns={Object.keys(tableData[0])}

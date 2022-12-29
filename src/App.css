@@ -30,6 +30,32 @@ body {
   padding: 20px;
 }
 
+.dashboard .row-delete {
+  margin-bottom: 10px;
+}
+
+.dashboard .row-delete button {
+  margin-right: 5px;
+  border: solid 1px;
+  padding: 5px 10px;
+  border-radius: 5px; 
+
+}
+
+.dashboard .row-delete button:hover {
+  filter: brightness(0.9);
+  cursor: pointer;
+}
+
+.dashboard .row-delete button:active {
+  filter: brightness(0.7);
+}
+
+.dashboard .row-delete button:disabled {
+  filter: brightness(0.9);
+  cursor: not-allowed;
+}
+
 .dashboard-table {
   border: solid 2px gray; 
   overflow: hidden;
