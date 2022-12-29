@@ -31,6 +31,7 @@ function Dashboard(props) {
             {
                 tableData.length ? (
                     <>
+                        Selected: {Object.values(props.selectedRows).filter(rowId => rowId).length}
                         <Table 
                             tableData={tableData} 
                             tableColumns={Object.keys(tableData[0])}
