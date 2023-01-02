@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setSelectedRows } from "../redux/actionCreators";
 
 function Header(props) {
     const { columns } = props;
+    const [ select, setSelect ] = useState(false);
 
     const selectAllRows = (event) => {
         const { checked } = event.target;
