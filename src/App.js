@@ -1,5 +1,6 @@
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { Outlet } from "react-router-dom";
 import './App.css';
 import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
@@ -11,7 +12,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Sidepanel />
-        <Dashboard data={jsonData}/>
+        <Outlet />
       </div>
     </Provider>
   );
