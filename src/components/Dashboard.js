@@ -30,7 +30,6 @@ function Dashboard(props) {
         setData(dataVal);
     }
 
-    console.log(props.selectedRows);
     const noOfRowsSelected = Object.values(props.selectedRows).filter(rowId => rowId).length;
     return (
         <div className="dashboard">

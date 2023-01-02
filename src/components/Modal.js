@@ -18,7 +18,6 @@ function Modal(props) {
         EventsService.emitter.emit(EventsService.OPEN_MODAL, null, false);
     }
 
-    console.log({ modalData });
     return (
         <>
             {
